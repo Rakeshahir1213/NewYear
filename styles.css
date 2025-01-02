@@ -1,0 +1,180 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #1a1a1a;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    font-size: 18px;
+    user-select: none;
+    text-align: center;
+}
+
+/* Parallax Background */
+.parallax {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://your-image-url.com/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+    filter: blur(10px);
+    transform: scale(1.1);
+}
+
+/* Title Styles with Neon Effect */
+.title {
+    font-size: 80px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #ff6347;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 255, 255, 0.8), 0 0 35px rgba(255, 0, 0, 0.6);
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+@keyframes neonGlow {
+    0% {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 255, 255, 0.8), 0 0 35px rgba(255, 0, 0, 0.6);
+    }
+    50% {
+        text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 0, 0, 1);
+    }
+    100% {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 255, 255, 0.8), 0 0 35px rgba(255, 0, 0, 0.6);
+    }
+}
+
+/* Subtitle Styles */
+.subtitle {
+    font-size: 24px;
+    color: #fff;
+    margin-top: 20px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.subtitle1 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-top: 20px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(214, 21, 21, 0.7);
+
+}
+
+/* Confetti (Falling Effect) */
+.confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.confetti .piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff6347;
+    animation: confettiFall 4s ease-in infinite;
+    opacity: 0.8;
+}
+
+@keyframes confettiFall {
+    0% {
+        opacity: 1;
+        transform: translateY(-100px) rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* Sparkle Effect */
+.sparkles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.sparkle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #FFD700;
+    border-radius: 50%;
+    animation: sparkleAnimation 1.5s infinite;
+    opacity: 0;
+}
+
+@keyframes sparkleAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) translateY(-10px);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1) translateY(10px);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5) translateY(-10px);
+    }
+}
+
+/* Message Container */
+.message-container {
+    position: fixed;
+    bottom: 50px;
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.message {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px 30px;
+    border-radius: 10px;
+    animation: bounceIn 1s ease-out;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
